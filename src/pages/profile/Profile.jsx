@@ -1,23 +1,26 @@
 import React from "react";
 import {
-  CategoriesWrapper,
   ProfileHeader,
-  ProfileImg,
   ProfileSection,
   SearchForm,
   SearchWrapper,
 } from "./Profile.styles";
-import ProfilImg from "../../../assets/img/head.png";
+
 import TuneIcon from "@mui/icons-material/Tune";
 import SearchIcon from "@mui/icons-material/Search";
-import Categories from "../../organisms/categories/Categories";
-import OngoingTask from "../../organisms/ongoingTask/OngoingTask";
+import Categories from "../../components/organisms/categories/Categories";
+import OngoingTask from "../../components/organisms/ongoingTask/OngoingTask";
+import ProfileIcon from "../../components/atoms/profilIcon/ProfileIcon";
+import CreateNew from "../../components/atoms/createNew/CreateNew";
+import { useSelector } from "react-redux";
 
 const Profile = () => {
+  const { name } = useSelector((state) => state.user.userInfo);
+
   return (
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
       <link
         href="https://fonts.googleapis.com/css2?family=Athiti:wght@300;400;500;600&display=swap"
         rel="stylesheet"
@@ -25,12 +28,10 @@ const Profile = () => {
       <ProfileSection>
         <ProfileHeader>
           <div>
-            <p>Cześć, Jan</p>
+            <p>Cześć, {name}</p>
             <span>5 zadań rozpoczętych</span>
           </div>
-          <ProfileImg>
-            <img src={ProfilImg} alt="" />
-          </ProfileImg>
+          <ProfileIcon />
         </ProfileHeader>
         <SearchWrapper>
           <SearchForm>
@@ -44,6 +45,7 @@ const Profile = () => {
         <Categories />
         <OngoingTask />
       </ProfileSection>
+      <CreateNew />
     </>
   );
 };

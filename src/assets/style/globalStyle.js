@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
         color: white;
     }
     body{
-        background-color: ${({ theme }) => theme.colors.bg};;
+        background-color: ${({ theme }) => theme.colors.bg};
+        overflow-x: hidden;
     }
 `;

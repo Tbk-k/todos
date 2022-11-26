@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ProfileSection = styled.section`
-  padding: 20px;
   max-width: 450px;
   margin: 0 auto;
 `;
@@ -22,18 +21,7 @@ export const ProfileHeader = styled.header`
   }
 `;
 
-export const ProfileImg = styled.div`
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.bgLight};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img {
-    height: 30px;
-  }
-`;
+
 export const SearchWrapper = styled.div`
   display: flex;
   justify-content: space-between;
